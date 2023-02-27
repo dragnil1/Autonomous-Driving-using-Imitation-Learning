@@ -1062,7 +1062,7 @@ class CameraManager(object):
                 self.keyboard.release(action)
                 self.keyboard.release('w')
         if self.current_control_folder:
-            image.save_to_disk('D:\Carla/Dataset/Carla_data/%s/%08d' % (self.current_control_folder, image.frame))
+            image.save_to_disk('D:/Carla/Carla_0.9.8/WindowsNoEditor/Data/%s/%08d' % (self.current_control_folder, image.frame))
             self.current_control_folder = None
         if self.recording:
             image.save_to_disk('_out/%08d' % image.frame)
