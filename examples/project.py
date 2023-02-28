@@ -1053,14 +1053,20 @@ class CameraManager(object):
             '''
             if action == 'w':
                 self.keyboard.press(action)
-                time.sleep(1)
+                time.sleep(.3)
                 self.keyboard.release(action)
-            else:
+            elif action != 's':
                 self.keyboard.press('w')
+                time.sleep(.2)
                 self.keyboard.press(action)
-                time.sleep(0.3)
+                time.sleep(.1)
                 self.keyboard.release(action)
+                time.sleep(.2)
                 self.keyboard.release('w')
+            else:
+                self.keyboard.press(action)
+                time.sleep(.1)
+                self.keyboard.release(action)
         if self.current_control_folder:
             image.save_to_disk('D:/Carla/Carla_0.9.8/WindowsNoEditor/Data/%s/%08d' % (self.current_control_folder, image.frame))
             self.current_control_folder = None
