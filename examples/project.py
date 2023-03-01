@@ -1057,15 +1057,15 @@ class CameraManager(object):
                 self.keyboard.release(action)
             elif action != 's':
                 self.keyboard.press('w')
-                time.sleep(.2)
+                time.sleep(.1)
                 self.keyboard.press(action)
-                time.sleep(.2)
+                time.sleep(.3)
                 self.keyboard.release(action)
-                time.sleep(.2)
+                time.sleep(.1)
                 self.keyboard.release('w')
             else:
                 self.keyboard.press(action)
-                time.sleep(.2)
+                time.sleep(.1)
                 self.keyboard.release(action)
         if self.current_control_folder:
             image.save_to_disk('D:/Carla/Carla_0.9.8/WindowsNoEditor/Data/%s/%08d' % (self.current_control_folder, image.frame))
@@ -1090,7 +1090,8 @@ class Network:
         transforms.ToTensor(),
         transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
         ]) 
-        self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+        #self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+        self.device = torch.device("cpu")
     def predict(self, img):
         img = self.tfm(img)
         img = img[np.newaxis, :]
@@ -1123,7 +1124,7 @@ def game_loop(args):
         display = pygame.display.set_mode(
             (args.width, args.height),
             pygame.HWSURFACE | pygame.DOUBLEBUF)
-        PATH = 'model-weights2.pth'
+        PATH = 'model-weight-cpu2.pth'
         neural_network = Network(PATH)
         hud = HUD(args.width, args.height)
         world = World(client.get_world(), hud, args, neural_network)
