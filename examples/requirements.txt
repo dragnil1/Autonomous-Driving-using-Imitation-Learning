@@ -1,3 +1,6 @@
 future
 numpy
 pygame
+pytorch
+Pillow
+pynput
