@@ -6,3 +6,7 @@ Then copy the file **examples/project.py** to **WindowsNoEditor/PythonAPI/exampl
 Command line will show all available control keys to collect image, to change the car to self driving mode etc. Another pygame window will open where the simulation will take place. 
 Before running the server and client, replace the **requirement.txt** file in **WindowsNoEditor/PythonAPI/examples/** with our **requirement.txt** and install the requirements.
 
+## Data Collection
+We collected 2 hours driving data. In total 10.5k images were collected but used only 5.6k images.
+Among them we used 3.6k images for training and 2k images for validation.
+
