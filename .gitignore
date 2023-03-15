@@ -1,2 +1,8 @@
 carla/
 util/
+examples/__pycache__/
+examples/cache/
+*.pth
+*.py
+!examples/project.py
+
