@@ -10,3 +10,7 @@ Before running the server and client, replace the **requirement.txt** file in **
 We collected 2 hours driving data. In total 10.5k images were collected but used only 5.6k images.
 Among them we used 3.6k images for training and 2k images for validation.
 
+## Demo 
+![alt text][logo]
+
+[logo]: https://github.com/dragnil1/Autonomous-Driving-using-Imitation-Learning/blob/main/demo.gif "Demo"
